@@ -21,6 +21,13 @@ public class UserService {
         return users.values();
     }
 
+    public Optional<User> findById (long userId) {
+        if (users.containsKey(userId)) {
+            return Optional.ofNullable(users.get(userId));
+        }
+        return Optional.empty();
+    }
+
     public User create( User user) {
         // Проверка обязательных условий
         if (user.getEmail() == null || user.getEmail().isBlank()) {
