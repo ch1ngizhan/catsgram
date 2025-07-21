@@ -22,7 +22,7 @@ public class PostService {
         this.userService = userService;
     }
 
-    public Collection<Post> findAll(SortOrder sort,int from,int size) {
+    public Collection<Post> findAll(SortOrder sort, int from, int size) {
         return posts.values()
                 .stream()
                 .sorted(sort.equals(SortOrder.ASCENDING) ? postDateComparator : postDateComparator.reversed())
@@ -32,7 +32,7 @@ public class PostService {
     }
 
     public Optional<Post> findById(long postId) {
-        if (posts.containsKey(postId)){
+        if (posts.containsKey(postId)) {
             return Optional.ofNullable(posts.get(postId));
         }
         return Optional.empty();
@@ -40,7 +40,7 @@ public class PostService {
 
     public Post create(Post post) {
         if (userService.findUserById(post.getId()).isEmpty()) {
-            throw new ConditionsNotMetException("Автор с id = " + post.getId() +"не найден");
+            throw new ConditionsNotMetException("Автор с id = " + post.getId() + "не найден");
         }
         if (post.getDescription() == null || post.getDescription().isBlank()) {
             throw new ConditionsNotMetException("Описание не может быть пустым");
@@ -63,7 +63,7 @@ public class PostService {
             oldPost.setDescription(newPost.getDescription());
             return oldPost;
         }
-        throw new NotFoundException("Пост с id = " + newPost.getId() + " "+"не найден");
+        throw new NotFoundException("Пост с id = " + newPost.getId() + " " + "не найден");
     }
 
     private long getNextId() {

@@ -1,6 +1,7 @@
 package ru.yandex.practicum.catsgram.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.Instant;
 
@@ -8,7 +9,7 @@ import java.time.Instant;
 @EqualsAndHashCode(of = {"email"})
 public class User {
 
-   private Long id;//уникальный идентификатор пользователя,
+    private Long id;//уникальный идентификатор пользователя,
 
     private String username;//имя пользователя
 

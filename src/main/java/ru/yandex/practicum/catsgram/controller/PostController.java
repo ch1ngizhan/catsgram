@@ -37,7 +37,7 @@ public class PostController {
             throw new ParameterNotValidException("from", "Начало выборки должно быть положительным числом");
         }
 
-        return postService.findAll(SortOrder.from(sort),from,size);
+        return postService.findAll(SortOrder.from(sort), from, size);
     }
 
     @GetMapping("/posts/{postId}")

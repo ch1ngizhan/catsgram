@@ -21,14 +21,14 @@ public class UserService {
         return users.values();
     }
 
-    public Optional<User> findById (long userId) {
+    public Optional<User> findById(long userId) {
         if (users.containsKey(userId)) {
             return Optional.ofNullable(users.get(userId));
         }
         return Optional.empty();
     }
 
-    public User create( User user) {
+    public User create(User user) {
         // Проверка обязательных условий
         if (user.getEmail() == null || user.getEmail().isBlank()) {
             throw new ConditionsNotMetException("Email должен быть указан");
@@ -97,7 +97,7 @@ public class UserService {
         return ++currentMaxId;
     }
 
-    public Optional<User> findUserById (Long id) {
+    public Optional<User> findUserById(Long id) {
         Optional<User> user;
         if (users.containsKey(id)) {
             user = Optional.of(users.get(id));

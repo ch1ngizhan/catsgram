@@ -12,12 +12,12 @@ import java.util.Scanner;
 public class CatsgramApplication {
 
     //код
-  public CatsgramApplication() {
-  }
+    public CatsgramApplication() {
+    }
 
     //код
-  public static void main(final String[] args) {
-      SpringApplication.run(CatsgramApplication.class, args);
+    public static void main(final String[] args) {
+        SpringApplication.run(CatsgramApplication.class, args);
         final Gson gson = new Gson();
         final Scanner scanner = new Scanner(System.in);
         System.out.print("Введите JSON => ");
@@ -28,5 +28,5 @@ public class CatsgramApplication {
         } catch (JsonSyntaxException exception) {
             System.out.println("Был введён некорректный JSON");
         }
-  }
+    }
 }

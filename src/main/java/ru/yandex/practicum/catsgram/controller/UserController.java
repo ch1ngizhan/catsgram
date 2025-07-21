@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{userId}")
-    public Optional<User> findById (@PathVariable long userId) {
+    public Optional<User> findById(@PathVariable long userId) {
         return userService.findById(userId);
     }
 
@@ -36,7 +36,7 @@ public class UserController {
 
     @PutMapping
     public User update(@RequestBody User newUser) {
-       return userService.update(newUser);
+        return userService.update(newUser);
     }
 
 

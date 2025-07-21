@@ -1,6 +1,7 @@
 package ru.yandex.practicum.catsgram.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(of = {"id"})
