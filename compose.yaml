@@ -3,12 +3,12 @@ services:
     image: postgres:16.1
     container_name: postgres
     ports:
-      - "5432:5432"
+      - "6432:5432"
     volumes:
       - ./volumes/postgres:/var/lib/postgresql/data/
     environment:
       - POSTGRES_DB=catsgram
-      - POSTGRES_USER=dbuser
+      - POSTGRES_USER=motroskin
       - POSTGRES_PASSWORD=12345
     healthcheck:
       test: pg_isready -q -d $$POSTGRES_DB -U $$POSTGRES_USER
